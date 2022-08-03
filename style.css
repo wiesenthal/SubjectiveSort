@@ -2,10 +2,11 @@ button.choice {
     background-color: blueviolet;
     border: 5px solid black;
     color: aliceblue;
-    width: 200px;
-    height: 150px;
-    font-size: 30px;
+    width: 250px;
+    height: 250px;
+    font-size: 25px;
     font-style: bold;
+    vertical-align: top;
 }
 button.choice:active {
     background-color: darkblue;
@@ -27,27 +28,29 @@ p {
 #dropZone {
     background-color: aliceblue;
     border: 5px solid blue;
-    width:  300px;
-    height: 180px;
+    width:  250px;
+    height: 250px;
     margin: 0 auto;
+    margin-right: 2.5px;
     float: left;
 }
 #pasteBox {
     background-color: lavenderblush;
     border: 5px solid blueviolet;
     float: left;
-    width: 300px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
+    margin-left: 2.5px;
     font-size: 18px;
 }
 #submit {
     width: 150px;
 }
 #paste {
-    width: 280px;
+    width: 230px;
     margin-top: 10px;
-    height: 130px;
+    height: 200px;
 }
 #inputZone {
     margin: 0 auto;
