@@ -9,3 +9,5 @@ It will show you 2 items at a team, you click the one which is higher than the o
 <img width="771" alt="Screen Shot 2022-08-02 at 6 11 35 PM" src="https://user-images.githubusercontent.com/26258920/182502939-4a5bb4ed-435e-4c11-97b8-8b33bdeb9d74.png">
 Results Screen, option to sort ascending or descending.
 <img width="771" alt="Screen Shot 2022-08-02 at 6 11 45 PM" src="https://user-images.githubusercontent.com/26258920/182502937-eb22c7ab-379b-4a62-9d43-bcd4cf6f8301.png">
+
+Project completion time ~11hrs
