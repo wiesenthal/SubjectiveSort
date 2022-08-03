@@ -22,9 +22,6 @@ div#resultBox {
     align-content: center;
     display: none;
 }
-p {
-    font-size: 30px;
-}
 #dropZone {
     background-color: aliceblue;
     border: 5px solid blue;
@@ -32,6 +29,7 @@ p {
     height: 250px;
     margin: 0 auto;
     margin-right: 2.5px;
+    font-size: 36px;
     float: left;
 }
 #pasteBox {
@@ -42,7 +40,6 @@ p {
     height: 250px;
     margin: 0 auto;
     margin-left: 2.5px;
-    font-size: 18px;
 }
 #submit {
     width: 150px;
@@ -51,6 +48,7 @@ p {
     width: 230px;
     margin-top: 10px;
     height: 200px;
+    font-size: 22px;
 }
 #inputZone {
     margin: 0 auto;
