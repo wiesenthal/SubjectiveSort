@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Subjective Sort</title>
+    <meta name="description" content="Sort a list with 1 vs 1 judgements">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Subjective Sort</h1>
+    <section id="inputZone">
+        <div id="dropZone">
+            <p>Drag your csv file of your list to be sorted here.</p>
+        </div>
+        <!--<input type="text" id="paste" name="paste" placeholder="Or input a comma separated list here."> -->
+        <div id="pasteBox">
+        <textarea id="paste" name="text" rows="4" cols="10" wrap="soft" placeholder="Or input a comma/newline separated list here."></textarea>
+        <button id="submit">Submit</button>
+        </div>
+    </section>
+    <button id="button1" class="choice">button 1</button>
+    <button id="button2" class="choice">button 2</button>
+    <div id="resultBox">
+        <h1>Results: </h1>
+        <p id="results"></p>
+        <div id="asctoggle">
+            <span class="ascdesc">Ascending</span>
+            <label id="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <span class="ascdesc">Descending</span>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
