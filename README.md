@@ -1,4 +1,4 @@
-# subjectiveSort
+# SubjectiveSort
 Sort lists subjectively by giving the user comparisons 2 items at a time.
 
 Implemented Ford-Johnson merge-insertion sort algorithm in javascript to minimize number of comparisons. Uses the user input as the compare function. This algorithm I chose because comparisons are practically the only significant efficiency cost.
