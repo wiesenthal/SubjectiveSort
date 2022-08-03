@@ -4,6 +4,19 @@ button2 = document.getElementById("button2");
 // only usable up to 10k elements
 const jacobsthal = [2, 2, 6, 10, 22, 42, 86, 170, 342, 682, 1366, 2730, 5462, 10922]; 
 
+let maxSortedList = [];
+
+function updateMaxSort(sortedList) {
+    if (sortedList.length > maxSortedList.length) {
+        maxSortedList = sortedList;
+    }
+    let percentage = 100*maxSortedList.length/items.length;
+    console.log(`${percentage}% complete`);
+    let descendingList = [...maxSortedList].reverse();
+    console.log(`sorted list so far: ${descendingList}`);
+    $("#bar").css('width', percentage + "%");
+}
+
 let items = [];
 
 const timeout = async ms => new Promise(res => setTimeout(res, ms));
@@ -64,16 +77,6 @@ $('#dropZone').on(
                 fileContent = event.target.result;
               };
         }
-        /*
-        if(e.originalEvent.dataTransfer) {
-            console.log(e.originalEvent.dataTransfer);
-            if (e.originalEvent.dataTransfer.files.length) {
-                console.log("files");
-                upload(e.originalEvent.dataTransfer.files);
-            } else if (e.originalEvent.dataTransfer.items.length) {
-                console.log("items");
-            }
-        } */
     }
 );
 
@@ -100,10 +103,7 @@ function shuffle(array) {
  }
 
  async function binarySearch(array, item, lowerBound, upperBound) {
-    console.log("binarySearch");
-    console.log(array, item, lowerBound, upperBound);
     if (lowerBound == upperBound) {
-        console.log("equal");
         if ((await compare(array[lowerBound], item) > 0)) {
             return lowerBound;
         }
@@ -180,15 +180,10 @@ async function mergeInsertionSort(list)
     {
         S.push(a);
     }
-    console.log("S, pairs, extra");
-    console.log(S, pairs, extra);
     S = await mergeInsertionSort(S);
-    console.log("S, sorted");
-    console.log(S);
     first = pairs[S[0]]; // get b to the first a
     S.splice(0, 0, first); // insert at beginning of array
-    console.log("S, with first pair, pairs");
-    console.log(S, pairs);
+    updateMaxSort(S);
     let remaining = [];
     for (i = 2; i < S.length; i++) { // skip first two elements of s, they are paired
         remaining.push(pairs[S[i]]);
@@ -199,8 +194,6 @@ async function mergeInsertionSort(list)
     // partition into groups of jacobsthal size
     remainingGroups = []
     jacobsthalIndex = 0
-    console.log("remaining:");
-    console.log(remaining)
     while (remaining.length > 0) {
         remainingGroups.push([]);
         activeGroup = remainingGroups[remainingGroups.length - 1];
@@ -215,8 +208,6 @@ async function mergeInsertionSort(list)
 
         jacobsthalIndex++;
     }
-    console.log(`created groups`);
-    console.log(remainingGroups);
     for (group of remainingGroups) {
         for (b of group) {
             if (b === extra) {
@@ -229,6 +220,7 @@ async function mergeInsertionSort(list)
                 indexToInsert = await binarySearch(S, b, 0, upperBound);
                 S.splice(indexToInsert, 0, b);
             }
+            updateMaxSort(S);
         }
     }
     return S;
@@ -237,6 +229,7 @@ async function mergeInsertionSort(list)
 async function main() {
     $("#button1").hide();
     $("#button2").hide();
+    $("#progressBar").hide();
     // get file
     $("#submit").click(getPastedText);
     fileText = await waitFileUpload();
@@ -248,12 +241,14 @@ async function main() {
     $("#inputZone").hide();
     $("#button1").show();
     $("#button2").show();
+    $("#progressBar").show();
     sortedList = await mergeInsertionSort(items);
     console.log("done");
+    $("#progressBar").hide();
     $("#button1").hide();
     $("#button2").hide();
     $("#resultBox").show();
-    console.log(sortedList.join("<br>"));
+    sortedList.reverse();
     $("#results").html(sortedList.join("<br>"));
     // toggle ascending descending
     $('#switch').change(function() {
