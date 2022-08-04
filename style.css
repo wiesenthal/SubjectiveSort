@@ -113,19 +113,19 @@ transform: translateX(26px);
     font-size: 20px;
     top: 8px;
 }
-
 #progressBar{
     margin: 0 auto;
     width: 500px;
 }
-
 #progress {
     width: 100%;
     background-color: grey;
-  }
-  
+} 
 #bar {
 width: 0%;
 height: 30px;
 background-color: blue;
+}
+#downloadSection {
+    margin: 0 auto;
 }

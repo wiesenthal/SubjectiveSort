@@ -17,6 +17,17 @@ function updateMaxSort(sortedList) {
     $("#bar").css('width', percentage + "%");
 }
 
+function downloadAsCSV(array, name) {
+    csvText = 'data:text/csv;charset=utf-8,';
+    csvText += array.join('\n');
+    var encodedUri = encodeURI(csvText);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", name + ".csv");
+    document.body.appendChild(link); 
+    link.click();
+}
+
 let items = [];
 
 const timeout = async ms => new Promise(res => setTimeout(res, ms));
@@ -227,6 +238,8 @@ async function mergeInsertionSort(list)
 }
 
 async function main() {
+    $("#resultsBox").hide();
+    $("#downloadResults").hide();
     $("#button1").hide();
     $("#button2").hide();
     $("#progressBar").hide();
@@ -255,6 +268,10 @@ async function main() {
         sortedList.reverse();
         $("#results").html(sortedList.join("<br>"));
     });
+    $("#downloadResults").click(function() {
+        console.log("hi");
+        downloadAsCSV(sortedList, "sorted");});
+    $("#downloadResults").show();
 }
 
 $(document).ready(main);
