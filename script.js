@@ -4,16 +4,24 @@ button2 = document.getElementById("button2");
 // only usable up to 10k elements
 const jacobsthal = [2, 2, 6, 10, 22, 42, 86, 170, 342, 682, 1366, 2730, 5462, 10922]; 
 
+let items = [];
 let maxSortedList = [];
 
-function updateMaxSort(sortedList) {
-    if (sortedList.length > maxSortedList.length) {
-        maxSortedList = sortedList;
+let numComparisons = 0;
+
+function updatePercentComplete(sortedList) {
+    if (sortedList) {
+        if (sortedList.length > maxSortedList.length) {
+            maxSortedList = sortedList;
+        }
+        let descendingList = [...maxSortedList].reverse();
+        console.log(`sorted list so far:\n${descendingList}`);
     }
-    let percentage = 100*maxSortedList.length/items.length;
-    console.log(`${percentage}% complete`);
-    let descendingList = [...maxSortedList].reverse();
-    console.log(`sorted list so far: ${descendingList}`);
+    let truePercentage = 100*(maxSortedList.length/items.length);
+    let estimatedPercentage = 100*(numComparisons/estimateNumComparisons(items.length));
+    estimatedPercentage = Math.min(100, estimatedPercentage);
+    let percentage = (truePercentage + estimatedPercentage) / 2;
+    console.log(`${Math.floor(percentage)}% complete`);
     $("#bar").css('width', percentage + "%");
 }
 
@@ -27,8 +35,6 @@ function downloadAsCSV(array, name) {
     document.body.appendChild(link); 
     link.click();
 }
-
-let items = [];
 
 const timeout = async ms => new Promise(res => setTimeout(res, ms));
 let next = false; // this is to be changed on user input
@@ -49,8 +55,13 @@ async function waitFileUpload() {
 function getPastedText() {
     let text = $("#paste").val();
     fileContent = text;
-
 }
+
+function estimateNumComparisons(n) {
+    let logBase237N = Math.log(n) / Math.log(2.35);
+    return Math.floor(n * logBase237N);
+}
+
 
 $('#dropZone').on(
     'dragover',
@@ -101,7 +112,6 @@ button2.onclick = function() {
 
 function shuffle(array) {
     for (var i = array.length - 1; i > 0; i--) {
-    
         // Generate random number
         var j = Math.floor(Math.random() * (i + 1));
                     
@@ -137,12 +147,12 @@ function shuffle(array) {
     }
  }
 
- let numComparisons = 0;
 async function compare(a, b) {
     numComparisons += 1;
     button1.innerHTML = a;
     button2.innerHTML = b;
     pressedButton = await waitUserInput();
+    updatePercentComplete();
     if (pressedButton === a) {
         return 1;
     } else if (pressedButton === b) {
@@ -194,7 +204,7 @@ async function mergeInsertionSort(list)
     S = await mergeInsertionSort(S);
     first = pairs[S[0]]; // get b to the first a
     S.splice(0, 0, first); // insert at beginning of array
-    updateMaxSort(S);
+    updatePercentComplete(S);
     let remaining = [];
     for (i = 2; i < S.length; i++) { // skip first two elements of s, they are paired
         remaining.push(pairs[S[i]]);
@@ -231,7 +241,7 @@ async function mergeInsertionSort(list)
                 indexToInsert = await binarySearch(S, b, 0, upperBound);
                 S.splice(indexToInsert, 0, b);
             }
-            updateMaxSort(S);
+            updatePercentComplete(S);
         }
     }
     return S;
@@ -251,6 +261,7 @@ async function main() {
     for (i in items) {
         items[i] = items[i].trim();
     }
+    console.log(`Estimated number of comparisons = ${estimateNumComparisons(items.length)}`)
     $("#inputZone").hide();
     $("#button1").show();
     $("#button2").show();
@@ -271,7 +282,7 @@ async function main() {
     $("#downloadResults").click(function() {
         downloadAsCSV(sortedList, "sorted");});
     $("#downloadResults").show();
-    console.log(`You made #${numComparisons} total comparisons.`);
+    console.log(`You made ${numComparisons} total comparisons.`);
 }
 
 $(document).ready(main);
