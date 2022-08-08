@@ -137,17 +137,17 @@ function shuffle(array) {
     }
  }
 
+ let numComparisons = 0;
 async function compare(a, b) {
-  button1.innerHTML = a;
-  button2.innerHTML = b;
-  pressedButton = await waitUserInput();
-  //button1.innerHTML = '';
-  //button2.innerHTML = '';
-  if (pressedButton === a) {
-    return 1;
-  } else if (pressedButton === b) {
-    return -1;
-  }
+    numComparisons += 1;
+    button1.innerHTML = a;
+    button2.innerHTML = b;
+    pressedButton = await waitUserInput();
+    if (pressedButton === a) {
+        return 1;
+    } else if (pressedButton === b) {
+        return -1;
+    }
 }
 
 async function mergeInsertionSort(list)
@@ -269,9 +269,9 @@ async function main() {
         $("#results").html(sortedList.join("<br>"));
     });
     $("#downloadResults").click(function() {
-        console.log("hi");
         downloadAsCSV(sortedList, "sorted");});
     $("#downloadResults").show();
+    console.log(`You made #${numComparisons} total comparisons.`);
 }
 
 $(document).ready(main);
