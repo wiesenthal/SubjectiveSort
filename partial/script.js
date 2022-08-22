@@ -225,9 +225,15 @@ async function main() {
     // clean items
     for (i in sorted) {
         sorted[i] = sorted[i].trim();
+        if (sorted[i] === "") {
+            sorted.splice(i, 1);
+        }
     }
     for (i in unsorted) {
         unsorted[i] = unsorted[i].trim();
+        if (unsorted[i] === "") {
+            unsorted.splice(i, 1);
+        }
     }    
     if (descending) {
         sorted.reverse();

@@ -260,6 +260,9 @@ async function main() {
     // clean items
     for (i in items) {
         items[i] = items[i].trim();
+        if (items[i] === "") {
+            items.splice(i, 1);
+        }
     }
     console.log(`Estimated number of comparisons = ${estimateNumComparisons(items.length)}`)
     $("#frontPage").hide();
