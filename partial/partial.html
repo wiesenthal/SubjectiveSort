@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Partial Subjective Sort</title>
+    <meta name="description" content="Sort a list with 1 vs 1 judgements">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Partial Subjective Sort</h1>
+    <div id="inputs">
+    <section id="inputZone" class="inputZone">
+        <div id="dropZone" class="dropZone">
+            <p>Drag a csv file of your ALREADY SORTED LIST <i>HERE.</i></p>
+        </div>
+        <!--<input type="text" id="paste" name="paste" placeholder="Or input a comma separated list here."> -->
+        <div id="pasteBox" class="pasteBox">
+        <textarea id="paste" class="paste" name="text" rows="4" cols="10" wrap="soft" placeholder="Or input a comma/newline separated ALREADY SORTED list here."></textarea>
+        <button id="submit" class="submit">Submit</button>
+        <div>
+            <span class="ascdesc small">Descending</span>
+            <label id="inputSwitch" class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <span class="ascdesc small">Ascending</span>
+        </div>
+        </div>
+    </section>
+    <br>
+    <section id="inputZone2" class="inputZone">
+        <div id="dropZone2" class="dropZone">
+            <p>Drag a csv file of your UNSORTED ITEMS <i>HERE.</i></p>
+        </div>
+        <!--<input type="text" id="paste" name="paste" placeholder="Or input a comma separated list here."> -->
+        <div id="pasteBox2" class="pasteBox">
+        <textarea id="paste2" class="paste" name="text" rows="4" cols="10" wrap="soft" placeholder="Or input a comma/newline separated list of UNSORTED ITEMS."></textarea>
+        <button id="submit2" class="submit">Submit</button>
+        </div>
+    </section>
+    </div>
+    <button id="button1" class="choice">button 1</button>
+    <button id="button2" class="choice">button 2</button>
+    <div id="progressBar">
+        <br>
+        <div id="progress"><div id="bar"></div></div></div>
+    <div id="resultBox">
+        <h1>Results: </h1>
+        <p id="results"></p>
+        <div>
+            <span class="ascdesc">Descending</span>
+            <label id="switch" class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <span class="ascdesc">Ascending</span>
+        </div>
+    </div>
+    <div id="downloadSection">
+        <br>
+        <button id="downloadResults">Download Results as CSV</button>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
