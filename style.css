@@ -129,3 +129,11 @@ background-color: blue;
 #downloadSection {
     margin: 0 auto;
 }
+#frontPage {
+    display: flex;
+    flex-direction: column;
+}
+a, a:visited 
+{
+    color: blue;
+}

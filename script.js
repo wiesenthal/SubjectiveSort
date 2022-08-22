@@ -262,7 +262,7 @@ async function main() {
         items[i] = items[i].trim();
     }
     console.log(`Estimated number of comparisons = ${estimateNumComparisons(items.length)}`)
-    $("#inputZone").hide();
+    $("#frontPage").hide();
     $("#button1").show();
     $("#button2").show();
     $("#progressBar").show();

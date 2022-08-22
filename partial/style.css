@@ -148,3 +148,7 @@ background-color: blue;
 #downloadSection {
     margin: 0 auto;
 }
+a, a:visited 
+{
+    color: blue;
+}
