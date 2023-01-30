@@ -62,21 +62,21 @@ function getPastedText2() {
     fileContent2 = text;
 }
 
-$('.dropZone').on(
+$('.inputZone').on(
     'dragover',
     function(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 )
-$('.dropZone').on(
+$('.inputZone').on(
     'dragenter',
     function(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 )
-$('#dropZone').on(
+$('#inputZone').on(
     'drop',
     function(e){
         e.preventDefault();
@@ -97,15 +97,13 @@ $('#dropZone').on(
             reader.onload = function (event) {
                 fileContent = event.target.result;
                 // lock in the text and drop zone
-                $("#dropZone").prop('disabled', true);
                 $("#paste").prop('disabled', true);
                 $("#paste").val(fileContent);
-                $("#dropZone").children()[0].innerHTML = "FILE UPLOADED";
               };
         }
     }
 );
-$('#dropZone2').on(
+$('#inputZone2').on(
     'drop',
     function(e){
         e.preventDefault();
@@ -126,10 +124,8 @@ $('#dropZone2').on(
             reader.onload = function (event) {
                 fileContent2 = event.target.result;
                 // lock in the text and drop zone
-                $("#dropZone2").prop('disabled', true);
                 $("#paste2").prop('disabled', true);
                 $("#paste2").val(fileContent2);
-                $("#dropZone2").children()[0].innerHTML = "FILE UPLOADED";
               };
         }
     }

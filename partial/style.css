@@ -25,25 +25,11 @@ div#resultBox {
 .submit {
     width: 150px;
 }
-.dropZone {
-    background-color: aliceblue;
-    border: 5px solid blue;
-    width:  250px;
-    height: 250px;
-    margin: 0 auto;
-    margin-right: 2.5px;
-    font-size: 36px;
-    float: left;
-}
-#dropZone2 {
-    background-color: rgb(255, 240, 240);
-    border: 5px solid rgb(255, 0, 0);
-}
 .pasteBox {
     background-color: lavenderblush;
     border: 5px solid blueviolet;
     float: left;
-    width: 250px;
+    width: 500px;
     height: 250px;
     margin: 0 auto;
     margin-left: 2.5px;
@@ -53,7 +39,7 @@ div#resultBox {
     border: 5px solid rgb(226, 113, 43);
 }
 .paste {
-    width: 230px;
+    width: 480px;
     margin-top: 10px;
     height: 200px;
     font-size: 22px;

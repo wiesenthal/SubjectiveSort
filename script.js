@@ -63,21 +63,21 @@ function estimateNumComparisons(n) {
 }
 
 
-$('#dropZone').on(
+$('#inputZone').on(
     'dragover',
     function(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 )
-$('#dropZone').on(
+$('#inputZone').on(
     'dragenter',
     function(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 )
-$('#dropZone').on(
+$('#inputZone').on(
     'drop',
     function(e){
         e.preventDefault();
