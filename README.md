@@ -1,19 +1,23 @@
 # SubjectiveSort
 https://wiesenthal.github.io/SubjectiveSort/
-<br>
-Sort lists subjectively by giving the user comparisons 2 items at a time.
 
-Implemented Ford-Johnson merge-insertion sort algorithm in javascript to minimize number of comparisons. Uses the user input as the compare function. This algorithm I chose because comparisons are practically the only significant efficiency cost.
+Sort lists subjectively by giving the user several binary choices.
+
+## Demo (has audio)
+https://github.com/wiesenthal/SubjectiveSort/assets/26258920/1906760f-7234-4be5-8e1b-a9f619c35895
+
+## Implementation
+
+I implemented Ford-Johnson merge-insertion sort algorithm in javascript to minimize number of comparisons. Uses the user input as the compare function. I chose this algorithm because it is the designed to minimize comparisons, therefore minimizing user-input, by far the most time consuming operation for this application.
+
+## Usage
 
 Start, can upload a csv or paste/type in manually. tab, comma, or newline separated values will be parsed correctly.
-<img width="771" alt="Screen Shot 2022-08-02 at 6 11 00 PM" src="https://user-images.githubusercontent.com/26258920/182502931-8d820bfd-5a8f-4f15-9435-320bb36dc149.png">
-<br>
-It will show you 2 items at a team, you click the one which is higher than the other on whatever subjective scale you determine.
-<br>
-<img width="771" alt="Screen Shot 2022-08-02 at 6 11 35 PM" src="https://user-images.githubusercontent.com/26258920/182502939-4a5bb4ed-435e-4c11-97b8-8b33bdeb9d74.png">
-<br>
-Results Screen, option to sort ascending or descending.
-<br>
-<img width="771" alt="Screen Shot 2022-08-02 at 6 11 45 PM" src="https://user-images.githubusercontent.com/26258920/182502937-eb22c7ab-379b-4a62-9d43-bcd4cf6f8301.png">
-<br><br>
+
+It will show you 2 items at a team, you click the one which is higher than the other on whatever subjective scale you determine. I reccomend picking based on your intuitive gut-reaction for speed and mental neutrality.
+
+The results screen has option to sort ascending or descending.
+
+If you already have a sorted list and want to add to it, use https://wiesenthal.github.io/SubjectiveSort/partial/partial.html.
+
 Project completion time ~11hrs
