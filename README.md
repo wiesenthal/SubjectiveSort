@@ -14,7 +14,7 @@ I implemented Ford-Johnson merge-insertion sort algorithm in javascript to minim
 
 Start, can upload a csv or paste/type in manually. tab, comma, or newline separated values will be parsed correctly.
 
-It will show you 2 items at a team, you click the one which is higher than the other on whatever subjective scale you determine. I reccomend picking based on your intuitive gut-reaction for speed and mental neutrality.
+It will show you 2 items at a team, you click the one which is higher than the other on whatever subjective scale you determine. I recommend picking based on your intuitive gut-reaction for speed and mental neutrality.
 
 The results screen has option to sort ascending or descending.
 
