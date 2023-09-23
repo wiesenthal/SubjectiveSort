@@ -3,6 +3,8 @@ https://wiesenthal.github.io/SubjectiveSort/
 
 Sort lists subjectively by giving the user several binary choices.
 
+I used this to rank a list of 150+ movies that I've seen.
+
 ## Demo (has audio)
 https://github.com/wiesenthal/SubjectiveSort/assets/26258920/1906760f-7234-4be5-8e1b-a9f619c35895
 
@@ -12,7 +14,7 @@ I implemented Ford-Johnson merge-insertion sort algorithm in javascript to minim
 
 ## Usage
 
-Start, can upload a csv or paste/type in manually. tab, comma, or newline separated values will be parsed correctly.
+To start can upload a csv or paste/type in manually. tab, comma, or newline separated values will be parsed correctly.
 
 It will show you 2 items at a team, you click the one which is higher than the other on whatever subjective scale you determine. I recommend picking based on your intuitive gut-reaction for speed and mental neutrality.
 
