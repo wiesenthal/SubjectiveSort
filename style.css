@@ -8,9 +8,6 @@ button.choice {
     font-style: bold;
     vertical-align: top;
 }
-button.choice:hover {
-    background-color: rgb(159, 92, 221);
-}
 button.choice:active {
     background-color: rgb(90, 17, 159);
 }
