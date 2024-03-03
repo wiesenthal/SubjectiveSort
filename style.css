@@ -8,8 +8,11 @@ button.choice {
     font-style: bold;
     vertical-align: top;
 }
+button.choice:hover {
+    background-color: rgb(159, 92, 221);
+}
 button.choice:active {
-    background-color: darkblue;
+    background-color: rgb(90, 17, 159);
 }
 div#resultBox {
     background-color: black;
@@ -131,6 +134,19 @@ background-color: blue;
     display: flex;
     flex-direction: column;
 }
+
+#restartNewList {
+    margin-top: 5px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+}
+#restartNewList:hover {
+    background-color: rgb(197, 197, 197);
+}
+
 a, a:visited 
 {
     color: blue;
