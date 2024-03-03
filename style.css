@@ -133,12 +133,13 @@ background-color: blue;
 }
 
 #restartNewList {
-    margin-top: 5px;
+    margin-top: 20px;
     background-color: white;
     color: black;
     border: 1px solid black;
     border-radius: 3px;
     padding: 5px;
+    font-size: 20px;
 }
 #restartNewList:hover {
     background-color: rgb(197, 197, 197);
